@@ -9,36 +9,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
-
-    private String correctPasswd = "PojPoj";
+public class Error extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_error);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Button readPasswd = (Button) findViewById(R.id.btnReadPasswd);
-        final MediaPlayer enterSound = MediaPlayer.create(this, R.raw.tr3);
-        ((EditText)findViewById(R.id.editText9)).requestFocus();
-
-        readPasswd.setOnClickListener(new View.OnClickListener(){
+        final MediaPlayer errorSound = MediaPlayer.create(this, R.raw.tug1);
+        errorSound.start(); // play sound
+        Button errClose = (Button) findViewById(R.id.btnErrClose);
+        errClose.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                String pswd = ((EditText)findViewById(R.id.editText9)).getText().toString();
-                if (pswd.equals(correctPasswd)) {
-                    enterSound.start();
-                    startActivity(new Intent(MainActivity.this, EnterToSystem.class));
-                } else {
-                    startActivity(new Intent(MainActivity.this, Error.class));
-                }
+                // finishActivity(0); - not effect
+                finish();
             }
         });
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }

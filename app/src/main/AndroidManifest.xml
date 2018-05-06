@@ -19,6 +19,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Error"
+            android:label="@string/title_activity_error"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kadzaku.zero.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EnterToSystem"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kadzaku.zero.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

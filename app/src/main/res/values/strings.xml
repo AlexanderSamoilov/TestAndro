@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Zero</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_error">Error</string>
+
+    <string name="title_activity_fullscreen">Назад к тесту</string>
+    <string name="dummy_button">Просто кнопка</string>
+    <string name="dummy_content">Congratilations!</string>
 </resources>
